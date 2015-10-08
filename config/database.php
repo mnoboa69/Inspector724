@@ -46,11 +46,12 @@ return [
 
     'connections' => [
 
-        'sqlite' => [
+        'sqliteMEM' => [
             'driver'   => 'sqlite',
             'database' => ':memory:',
             'prefix'   => '',
         ],
+        
 
         'mysql' => [
             'driver'    => 'mysql',
