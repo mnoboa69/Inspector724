@@ -104,13 +104,13 @@
  *   <logging>
  *     <log type="coverage-html" target="/tmp/report" lowUpperBound="50" highLowerBound="90"/>
  *     <log type="coverage-clover" target="/tmp/clover.xml"/>
- *     <log type="coverage-crap4j" target="/tmp/crap.xml" threshold="30"/>
  *     <log type="json" target="/tmp/logfile.json"/>
  *     <log type="plain" target="/tmp/logfile.txt"/>
  *     <log type="tap" target="/tmp/logfile.tap"/>
  *     <log type="junit" target="/tmp/logfile.xml" logIncompleteSkipped="false"/>
  *     <log type="testdox-html" target="/tmp/testdox.html"/>
  *     <log type="testdox-text" target="/tmp/testdox.txt"/>
+ *     <log type="coverage-crap4j" target="/tmp/crap.xml"/>
  *   </logging>
  *
  *   <php>
@@ -293,11 +293,11 @@ class PHPUnit_Util_Configuration
         );
 
         foreach ($this->xpath->query('groups/include/group') as $group) {
-            $groups['include'][] = (string) $group->textContent;
+            $groups['include'][] = (string) $group->nodeValue;
         }
 
         foreach ($this->xpath->query('groups/exclude/group') as $group) {
-            $groups['exclude'][] = (string) $group->textContent;
+            $groups['exclude'][] = (string) $group->nodeValue;
         }
 
         return $groups;
@@ -331,7 +331,7 @@ class PHPUnit_Util_Configuration
                         if ($argument instanceof DOMElement) {
                             if ($argument->tagName == 'file' ||
                             $argument->tagName == 'directory') {
-                                $arguments[] = $this->toAbsolutePath((string) $argument->textContent);
+                                $arguments[] = $this->toAbsolutePath((string) $argument->nodeValue);
                             } else {
                                 $arguments[] = PHPUnit_Util_XML::xmlToVariable($argument);
                             }
@@ -381,13 +381,6 @@ class PHPUnit_Util_Configuration
                     $result['highLowerBound'] = $this->getInteger(
                         (string) $log->getAttribute('highLowerBound'),
                         90
-                    );
-                }
-            } elseif ($type == 'coverage-crap4j') {
-                if ($log->hasAttribute('threshold')) {
-                    $result['crap4jThreshold'] = $this->getInteger(
-                        (string) $log->getAttribute('threshold'),
-                        30
                     );
                 }
             } elseif ($type == 'junit') {
@@ -441,7 +434,7 @@ class PHPUnit_Util_Configuration
         );
 
         foreach ($this->xpath->query('php/includePath') as $includePath) {
-            $path = (string) $includePath->textContent;
+            $path = (string) $includePath->nodeValue;
             if ($path) {
                 $result['include_path'][] = $this->toAbsolutePath($path);
             }
@@ -891,7 +884,7 @@ class PHPUnit_Util_Configuration
         $exclude = array();
 
         foreach ($testSuiteNode->getElementsByTagName('exclude') as $excludeNode) {
-            $excludeFile = (string) $excludeNode->textContent;
+            $excludeFile = (string) $excludeNode->nodeValue;
             if ($excludeFile) {
                 $exclude[] = $this->toAbsolutePath($excludeFile);
             }
@@ -904,7 +897,7 @@ class PHPUnit_Util_Configuration
                 continue;
             }
 
-            $directory = (string) $directoryNode->textContent;
+            $directory = (string) $directoryNode->nodeValue;
 
             if (empty($directory)) {
                 continue;
@@ -952,7 +945,7 @@ class PHPUnit_Util_Configuration
                 continue;
             }
 
-            $file = (string) $fileNode->textContent;
+            $file = (string) $fileNode->nodeValue;
 
             if (empty($file)) {
                 continue;
@@ -1033,7 +1026,7 @@ class PHPUnit_Util_Configuration
         $directories = array();
 
         foreach ($this->xpath->query($query) as $directory) {
-            $directoryPath = (string) $directory->textContent;
+            $directoryPath = (string) $directory->nodeValue;
 
             if (!$directoryPath) {
                 continue;
@@ -1078,7 +1071,7 @@ class PHPUnit_Util_Configuration
         $files = array();
 
         foreach ($this->xpath->query($query) as $file) {
-            $filePath = (string) $file->textContent;
+            $filePath = (string) $file->nodeValue;
             if ($filePath) {
                 $files[] = $this->toAbsolutePath($filePath);
             }

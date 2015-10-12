@@ -238,7 +238,7 @@ class PHPUnit_Framework_TestSuite implements PHPUnit_Framework_Test, PHPUnit_Fra
             }
 
             if (empty($groups)) {
-                $groups = array('default');
+                $groups = array('__nogroup__');
             }
 
             foreach ($groups as $group) {
@@ -308,10 +308,13 @@ class PHPUnit_Framework_TestSuite implements PHPUnit_Framework_Test, PHPUnit_Fra
      * leaving the current test run untouched.
      *
      * @param  string                      $filename
+     * @param  array                       $phptOptions Array with ini settings for the php instance
+     *                                                  run, key being the name if the setting,
+     *                                                  value the ini value.
      * @throws PHPUnit_Framework_Exception
      * @since  Method available since Release 2.3.0
      */
-    public function addTestFile($filename)
+    public function addTestFile($filename, $phptOptions = array())
     {
         if (!is_string($filename)) {
             throw PHPUnit_Util_InvalidArgumentHelper::factory(1, 'string');
@@ -319,7 +322,7 @@ class PHPUnit_Framework_TestSuite implements PHPUnit_Framework_Test, PHPUnit_Fra
 
         if (file_exists($filename) && substr($filename, -5) == '.phpt') {
             $this->addTest(
-                new PHPUnit_Extensions_PhptTestCase($filename)
+                new PHPUnit_Extensions_PhptTestCase($filename, $phptOptions)
             );
 
             return;
