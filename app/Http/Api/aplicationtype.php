@@ -14,7 +14,7 @@ class aplicationtype extends Model
         return $this->hasMany('App\Http\Api\applicationmaster','apptype_id','applicationtype_id');
     }
     
-    public function application_exception(){
-        return $this->hasMany('App\Http\Api\alarm_actions','apptype_id','applicationtype_id');
+    public function application_exceptions(){
+        return $this->hasMany('App\Http\Api\application_exception','apptype_id','applicationtype_id');
     }
 }
