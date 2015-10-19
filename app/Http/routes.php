@@ -14,10 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/admin/company', '\App\Http\Administration\CtrlCompany@createCompany');
 
 Route::get('/company', function() {
 //    return view('principal');
     return view('company-form');
 });
+
+Route::post('/admin/createCompany', '\App\Http\Administration\CtrlCompany@createCompany');
 
