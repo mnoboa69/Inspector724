@@ -11,8 +11,28 @@
 |
 */
 
-$app = new Illuminate\Foundation\Application(
+/*$app = new Illuminate\Foundation\Application(
     realpath(__DIR__.'/../')
+);*/
+
+if (!class_exists("MyApplication")) {
+
+    class MyApplication extends Illuminate\Foundation\Application {
+
+        public function publicPath() {
+            return $this->basePath . '/../public';
+        }
+
+        public function logPath() {
+            return $this->basePath . '/../log';
+        }
+
+    }
+
+}
+
+$app = new MyApplication(
+        realpath(__DIR__ . '/../')
 );
 
 /*
