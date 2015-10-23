@@ -15,9 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/principal', function () {
-    return view('principal');
-});
+Route::get('/admin/company', '\App\Http\Administration\CtrlCompany@createCompany');
 
 Route::get('/company', function() {
 //    return view('principal');
@@ -26,3 +24,6 @@ Route::get('/company', function() {
 
 Route::post('/admin/createCompany', '\App\Http\Administration\CtrlCompa@createCompany');
 
+Route::get('/principal', function () {
+    return view('principal');
+});
