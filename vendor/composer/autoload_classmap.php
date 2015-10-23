@@ -16,6 +16,7 @@ return array(
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
     'App\\Features' => $baseDir . '/app/Http/Api/Features.php',
     'App\\Http\\Administration\\Company' => $baseDir . '/app/Http/Administration/Company.php',
+    'App\\Http\\Administration\\CtrlCompa' => $baseDir . '/app/Http/Administration/CtrlCompa.php',
     'App\\Http\\Administration\\companyCtrl' => $baseDir . '/app/Http/Administration/CtrlCompany.php',
     'App\\Http\\Controllers\\Auth\\AuthController' => $baseDir . '/app/Http/Controllers/Auth/AuthController.php',
     'App\\Http\\Controllers\\Auth\\PasswordController' => $baseDir . '/app/Http/Controllers/Auth/PasswordController.php',

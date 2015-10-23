@@ -1,6 +1,6 @@
-{!! Html::style('assets/css/bootstrap.min.css') !!}
+@extends('principal')
+@section('contenido')
 
-{!! Html::script('assets/js/bootstrap.min.js') !!}
 <title>Jumbotron Template for Bootstrap</title>
 <h3>Administracion Compania</h3>
 
@@ -28,4 +28,4 @@
 {!! Form::close() !!}
 
 
-
+@endsection('contenido')
