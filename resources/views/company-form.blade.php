@@ -4,7 +4,7 @@
 <title>Jumbotron Template for Bootstrap</title>
 <h3>Administracion Compania</h3>
 
-{!! Form::open(array('url' => 'admin/createCompany')) !!}
+{!! Form::open(array('url' => 'admin/createCompany/')) !!}
 <div class="form-group">
     {!!    Form::label('name', 'Nombre') !!}
     {!!    Form::text('name','', array('class' => 'form-control col-3')) !!}

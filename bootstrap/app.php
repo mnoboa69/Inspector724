@@ -20,12 +20,12 @@ if (!class_exists("MyApplication")) {
     class MyApplication extends Illuminate\Foundation\Application {
 
         public function publicPath() {
-            return $this->basePath . '/../public';
+            return $this->basePath . '/public/';
         }
 
-        public function logPath() {
-            return $this->basePath . '/../log';
-        }
+//        public function logPath() {
+//            return $this->basePath . '/../log';
+//        }
 
     }
 

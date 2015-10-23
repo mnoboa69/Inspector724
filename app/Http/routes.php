@@ -20,5 +20,5 @@ Route::get('/company', function() {
     return view('company-form');
 });
 
-Route::post('/admin/createCompany', '\App\Http\Administration\CtrlCompany@createCompany');
+Route::post('/admin/createCompany', '\App\Http\Administration\CtrlCompa@createCompany');
 

@@ -18,6 +18,7 @@ class CreateCompanyTable extends Migration {
             $table->dateTime('start_date');
             $table->dateTime('end_date');
             $table->string('last_name')->nullable();
+            $table->timestamps();
         });
     }
 

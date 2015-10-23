@@ -46,6 +46,8 @@ class Company extends Model {
     }
 
     public function createCompany($name, $plan_id, $start_date, $end_date, $last_name = null) {
+        $prue = array("name" => $name, "plan_id" => $plan_id, "start_date" => $start_date, "end_date" => $end_date, "last_name" => $last_name);
+        dump($prue);
         $respuesta = array();
         $company = new self();
         $respuesta = self::create(["name" => $name, "plan_id" => $plan_id, "start_date" => $start_date, "end_date" => $end_date, "last_name" => $last_name]);
