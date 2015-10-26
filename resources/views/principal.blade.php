@@ -41,17 +41,18 @@
                     <li>
                         <a href="#"><i class="fa fa-gears"></i><span class="nav-label">Configuración</span><span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
-                            <li><a href="#">Usuarios</a></li>
+                            <li><a href="company">Compa&ntilde;&iacute;a</a></li>
+                            <li><a href="usuarios">Usuarios</a></li>
                             <li><a href="#">Grupos</a></li>
                             <li><a href="#">Categorías</a></li>
                             <li><a href="#">Alarmas</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-user"></i> <span class="nav-label">Mi cuenta</span></a>
+                        <a href="#"><i class="fa fa-user"></i><span class="nav-label">Mi cuenta</span></a>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-cloud-download"></i> <span class="nav-label">Descargar agente</span></a>
+                        <a href="#"><i class="fa fa-cloud-download"></i><span class="nav-label">Descargar agente</span></a>
                     </li>
                 </ul>
             </div>
@@ -68,29 +69,15 @@
                         <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-bell"></i></a>
                             <ul class="dropdown-menu dropdown-messages">
-                                <li>
-                                    <div class="dropdown-messages-box">
-                                        <a href="#">Alarmas</a>
-                                    </div>
-                                </li>
+                                <li><div class="dropdown-messages-box"><a href="#">Alarmas</a></div></li>
                                 <li class="divider"></li>
-                                <li>
-                                    <div class="dropdown-messages-box">
-                                        <a href="#">Correos</a>
-                                    </div>
-                                </li>
+                                <li><div class="dropdown-messages-box"><a href="#">Correos</a></div></li>
                                 <li class="divider"></li>
-                                <li>
-                                    <div class="dropdown-messages-box">
-                                        <a href="#">Bloqueos</a>
-                                    </div>
-                                </li>
+                                <li><div class="dropdown-messages-box"><a href="#">Bloqueos</a></div></li>
                                 <li class="divider"></li>
                             </ul>
                         </li>
-                        <li>
-                            <a href="#"><i class="fa fa-sign-out"></i> Salir</a>
-                        </li>
+                        <li><a href="#"><i class="fa fa-sign-out"></i>Salir</a></li>
                     </ul>
                 </nav>
             </div>
@@ -101,7 +88,7 @@
             
             <div class="footer">
                 <div>
-                    <strong>Copyright</strong> Anyway &copy; 2014
+                    <strong>Copyright</strong> Anyway &copy; 2015
                 </div>
             </div>
 
