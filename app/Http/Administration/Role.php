@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Role extends Model
 {
-    protected $table = 'Role';
+    protected $table = 'Roles';
     protected $primaryKey = 'role_id';
     protected $fillable = ["name"];
 
@@ -22,10 +22,16 @@ class Role extends Model
 
     public function createRole($name) {
         $role = new self();
-        $respuesta = self::create(["name" => $name]);
+        $respuesta = $role::create(["name" => $name]);
         if (is_object($respuesta)) {
             return true;
         }
         return false;
+    }
+
+    public function getRoles() {
+        $role = new self();
+        $respuesta = $role::all();
+        return $respuesta;
     }
 }

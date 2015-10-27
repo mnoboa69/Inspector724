@@ -44,11 +44,10 @@ class CtrlRole extends Controller
      * @return Response
      */
     public function store(Request $request) {
-        $params = $request->request->all();
+        $params = $request->all();
         $name = $params['name'];
-
         $rules = [
-            'name' => 'Required|min:3|max:50',
+            'name' => 'required|min:3|max:50',
         ];
 
         // customize messages
@@ -61,7 +60,7 @@ class CtrlRole extends Controller
         $validator = Validator::make($request->all(), $rules, $messages);
 
         if ($validator->fails()) {
-            return redirect('/company')
+            return redirect('/role')
                 ->withErrors($validator)
                 ->withInput();
 
@@ -69,7 +68,11 @@ class CtrlRole extends Controller
 
         $role = new Role();
         $arrRole = $role->createRole($name);
-        return response()->json($arrRole);
+        if ($arrRole) {
+            return redirect('/admin/getRoles');
+        }
+        return redirect('/role');
+        //return response()->json($arrRole);
     }
 
     /**
@@ -111,5 +114,11 @@ class CtrlRole extends Controller
      */
     public function destroy($id) {
         //
+    }
+
+    public function getRoles() {
+        $role = new Role();
+        $arrRoles = $role->getRoles();
+        return view('roles-grid', ['roles' => $arrRoles]);
     }
 }

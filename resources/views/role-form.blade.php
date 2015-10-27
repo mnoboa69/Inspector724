@@ -9,7 +9,7 @@
     {!!    Form::label('name', 'Nombre') !!}
     {!!    Form::text('name','', array('class' => 'form-control col-3')) !!}        
 </div>
-{!!    Form::submit('Guardar role', array('class' => 'btn btn-default')) !!}
+{!!    Form::submit('Guardar rol', array('class' => 'btn btn-default')) !!}
 @if ( $errors->count() > 0 )
     <div class="alert alert-danger" style="margin-top: 10px;">
         <p>Se presentaron los siguientes errores:</p>

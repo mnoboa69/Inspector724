@@ -26,6 +26,8 @@ Route::get('/role', function() {
     return view('role-form');
 });
 
+Route::get('/admin/getRoles', '\App\Http\Administration\CtrlRole@getRoles');
+
 Route::post('/admin/createCompany', '\App\Http\Administration\CtrlCompa@createCompany');
 
 Route::post('/admin/createRole', '\App\Http\Administration\CtrlRole@store');
