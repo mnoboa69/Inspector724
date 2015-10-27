@@ -72,7 +72,6 @@ class CtrlRole extends Controller
             return redirect('/admin/getRoles');
         }
         return redirect('/role');
-        //return response()->json($arrRole);
     }
 
     /**
