@@ -11,6 +11,8 @@
     {!! Html::style('font-awesome/css/font-awesome.css') !!}
     <!-- Morris Graficas -->
     {!! Html::style('css/plugins/morris/morris-0.4.3.min.css') !!}
+    
+    {!! Html::style('css/plugins/datapicker/datepicker3.css') !!}
     {!! Html::style('css/animate.css') !!}
     {!! Html::style('css/style.css') !!}
     
@@ -30,7 +32,7 @@
                     <li>
                         <a href="#"><i class="fa fa-table"></i><span class="nav-label">Reportes</span><span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
-                            <li><a href="re_uso.html">Uso</a></li>
+                            <li><a href="re_uso">Uso</a></li>
                             <li><a href="re_detalle.html">Detalle de actividades</a></li>
                             <li><a href="re_notificaciones.html">Notificaciones</a></li>
                             <li><a href="re_observador.html">Observador</a></li>
