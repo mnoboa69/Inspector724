@@ -15,11 +15,9 @@
     {!! Html::style('css/style.css') !!}
     
 </head>
-
-    <body>
+<body>
 
 <div id="wrapper">
-        
         <nav class="navbar-default navbar-static-side" role="navigation">
             <div class="sidebar-collapse">
                 <ul class="nav" id="side-menu">
