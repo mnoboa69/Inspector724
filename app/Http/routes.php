@@ -22,6 +22,12 @@ Route::get('/company', function() {
     return view('company-form');
 });
 
+Route::post('/admin/createUser', '\App\Http\Administration\CtrlWebUsers@store');
+
+Route::get('/user', function() {
+//    return view('principal');
+    return view('webuser-form');
+});
 Route::get('/role', function() {
     return view('role-form');
 });
